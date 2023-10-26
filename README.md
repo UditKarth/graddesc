@@ -1,5 +1,9 @@
 # Gradient Descent for 225
 **Algorithm Summary:**
+Resources:
+https://arxiv.org/pdf/1609.04747.pdf
+https://ece-research.unm.edu/bsanthan/eceAdap/HW_Exam/gnlms.pdf
+
 
 Gradient Descent is a first-order iterative optimization algorithm employed to find the local minimum of a function. In the context of machine learning and artificial intelligence, it's particularly used to minimize the cost function, which represents the difference between the predicted values and actual values. The basic idea of the algorithm is to tweak parameters iteratively in the direction of the steepest descent, or the negative gradient. The magnitude of the adjustments is determined by the learning rate, a hyperparameter that needs to be set prior to the commencement of the algorithm. In essence, starting from an initial set of parameters, the algorithm adjusts these parameters step-by-step to minimize the cost function until a convergence or a certain number of iterations is achieved.
 
