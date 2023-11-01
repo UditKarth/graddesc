@@ -19,6 +19,7 @@ TEST_CASE("Test compute_cost", "[weight=1][part=1]") {
     std::vector<double> target_values = {/*...*/}; // Define your target values
 
     double cost = algorithm.compute_cost(data_points, parameters, target_values);
+    REQUIRE(cost >= 0);
     REQUIRE(cost == expected_cost);
 
     // Add assertions to check if cost is as expected
@@ -33,6 +34,7 @@ TEST_CASE("Test compute_gradient", "[weight=1][part=1]") {
     std::vector<double> target_values = {/*...*/}; // Define your target values
 
     std::vector<double> gradient = algorithm.compute_gradient(data_points, parameters, target_values);
+    REQUIRE(gradient.size() == 14);
 
     // Add assertions to check if gradient is as expected
     // For example: REQUIRE(gradient[0] == expected_gradient_value);
@@ -46,7 +48,7 @@ TEST_CASE("Test update_parameters", "[weight=1][part=1]") {
     double learning_rate = 0.1; // Define your learning rate
 
     std::vector<double> updated_parameters = algorithm.update_parameters(current_parameters, gradient, learning_rate);
-
+    REQUIRE(updated_parameters.size() == 14);
     // Add assertions to check if updated_parameters are as expected
     // For example: REQUIRE(updated_parameters[0] == expected_updated_value);
 }
