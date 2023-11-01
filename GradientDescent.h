@@ -36,6 +36,11 @@ public:
 
 private:
     // Define any additional helper functions or variables as needed
+    bool check_convergence(const std::vector<double>& new_parameters,
+                       const std::vector<double>& old_parameters,
+                       double threshold);
+    std::vector<std::vector<double>> normalize_data(const std::vector<std::vector<double>>& data_points);
+
 };
 //Read csv data
 std::vector<std::vector<double>> read_csv(const std::string& filename);

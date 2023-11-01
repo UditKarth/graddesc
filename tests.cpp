@@ -4,12 +4,11 @@
 
 // Test case for initialize_parameters function
 TEST_CASE("Test initialize_parameters", "[weight=1][part=1]") {
+    int expected_size = 5;
     GeneralizedNormalizedGradientAlgorithm algorithm;
     std::vector<double> parameters = algorithm.initialize_parameters();
 
-    // Add assertions to check if parameters are within expected range
-    // For example: REQUIRE(parameters.size() == expected_size);
-    //                REQUIRE(parameters[0] >= min_value && parameters[0] <= max_value);
+    REQUIRE(parameters.size() == expected_size);
 }
 
 // Test case for compute_cost function
@@ -20,6 +19,7 @@ TEST_CASE("Test compute_cost", "[weight=1][part=1]") {
     std::vector<double> target_values = {/*...*/}; // Define your target values
 
     double cost = algorithm.compute_cost(data_points, parameters, target_values);
+    REQUIRE(cost == expected_cost);
 
     // Add assertions to check if cost is as expected
     // For example: REQUIRE(cost == expected_cost);
