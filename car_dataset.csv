@@ -1,0 +1,11 @@
+Car Type,Fuel Efficiency (mpg),Horsepower,Weight (lbs),Price ($)
+Sedan,28,150,3000,25000
+SUV,22,200,4500,35000
+Hatchback,35,100,2300,20000
+Truck,18,250,6000,40000
+Convertible,25,180,3200,30000
+Coupe,30,170,2800,27000
+Minivan,20,160,3500,28000
+Crossover,26,190,3800,32000
+Sports Car,23,300,3500,60000
+Electric Car,120,150,4500,50000
