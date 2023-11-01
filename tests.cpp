@@ -21,9 +21,6 @@ TEST_CASE("Test compute_cost", "[weight=1][part=1]") {
     double cost = algorithm.compute_cost(data_points, parameters, target_values);
     REQUIRE(cost >= 0);
     REQUIRE(cost == expected_cost);
-
-    // Add assertions to check if cost is as expected
-    // For example: REQUIRE(cost == expected_cost);
 }
 
 // Test case for compute_gradient function
@@ -36,8 +33,6 @@ TEST_CASE("Test compute_gradient", "[weight=1][part=1]") {
     std::vector<double> gradient = algorithm.compute_gradient(data_points, parameters, target_values);
     REQUIRE(gradient.size() == 14);
 
-    // Add assertions to check if gradient is as expected
-    // For example: REQUIRE(gradient[0] == expected_gradient_value);
 }
 
 // Test case for update_parameters function
@@ -49,8 +44,7 @@ TEST_CASE("Test update_parameters", "[weight=1][part=1]") {
 
     std::vector<double> updated_parameters = algorithm.update_parameters(current_parameters, gradient, learning_rate);
     REQUIRE(updated_parameters.size() == 14);
-    // Add assertions to check if updated_parameters are as expected
-    // For example: REQUIRE(updated_parameters[0] == expected_updated_value);
+
 }
 
 // Test case for gradient_descent function
@@ -65,7 +59,11 @@ TEST_CASE("Test gradient_descent", "[weight=1][part=1]") {
 
     std::vector<double> optimized_parameters = algorithm.gradient_descent(
         data_points, target_values, initial_parameters, learning_rate, max_iterations, convergence_threshold);
-
-    // Add assertions to check if optimized_parameters are as expected
-    // For example: REQUIRE(optimized_parameters[0] == expected_optimized_value);
+    for (double param : optimized_parameters) {
+        REQUIRE(param > SOME_MIN_VALUE); // e.g., -1000 if you expect values not to explode
+        REQUIRE(param < SOME_MAX_VALUE); // e.g., 1000
+    }
+    for (size_t i = 0; i < optimized_parameters.size(); ++i) {
+    REQUIRE(optimized_parameters[i] == Approx(expected_optimized_parameters[i]).margin(0.01));
+    }
 }
