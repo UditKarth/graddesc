@@ -33,5 +33,13 @@ Gradient Descent is a first-order iterative optimization algorithm employed to f
     - **Inputs:** Data points, target values, initial parameters, learning rate, maximum number of iterations, and a convergence threshold.
     - **Outputs:** Optimized parameters.
     - **Test for Correctness:** For a well-known dataset, the function should converge to a known set of parameters or achieve a cost below a certain threshold.
+  
+6. **Function Name:** `check_convergence`
+    - **Inputs:** New parameters, old parameters, threshold
+    - **Outputs:** Whether or not the function is converging
+
+7. **Function Name:** `read_csv`
+    - **Inputs:** filename
+    - **Outputs:** 2d vector containing datapoints from csv
 
 In the process of testing, we'll use both synthetic datasets (where we know the underlying parameters) and real-world datasets. The synthetic datasets help in validating the correctness of the algorithm, as we can compare the learned parameters with the true ones. On the other hand, with real-world datasets, we aim to ensure that the cost function reaches a value that is comparable to benchmarked results or improves upon them.
